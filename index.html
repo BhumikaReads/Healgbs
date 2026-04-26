@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>Your Healing Story 💙</title>
+<title>Heer's Healing Story 💙</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap');
 
@@ -25,26 +25,21 @@
 }
 
 - { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html { scroll-behavior: smooth; }
+  body {
+  background: var(–bg);
+  color: var(–text);
+  font-family: ‘Quicksand’, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  }
 
-html { scroll-behavior: smooth; }
-
-body {
-background: var(–bg);
-color: var(–text);
-font-family: ‘Quicksand’, sans-serif;
-font-size: 16px;
-line-height: 1.7;
-overflow-x: hidden;
-}
-
-/* ─── SCANLINE OVERLAY ─── */
 body::before {
 content:’’;
 position:fixed; inset:0; z-index:0; pointer-events:none;
 background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,212,255,0.012) 2px, rgba(0,212,255,0.012) 4px);
 }
-
-/* ─── NOISE TEXTURE ─── */
 body::after {
 content:’’;
 position:fixed; inset:0; z-index:0; pointer-events:none;
@@ -65,7 +60,6 @@ padding: 2rem 1.5rem 4rem;
 position: relative;
 overflow: hidden;
 }
-
 .hero-glow {
 position:absolute; inset:0; pointer-events:none;
 background:
@@ -73,7 +67,6 @@ radial-gradient(ellipse 60% 50% at 20% 40%, rgba(0,212,255,0.12) 0%, transparent
 radial-gradient(ellipse 50% 60% at 80% 60%, rgba(255,61,154,0.10) 0%, transparent 70%),
 radial-gradient(ellipse 40% 40% at 50% 90%, rgba(0,255,157,0.07) 0%, transparent 70%);
 }
-
 .hero-grid {
 position:absolute; inset:0; pointer-events:none;
 background-image:
@@ -82,7 +75,6 @@ linear-gradient(90deg, rgba(0,212,255,0.04) 1px, transparent 1px);
 background-size: 40px 40px;
 mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
 }
-
 .hero-badge {
 display:inline-flex; align-items:center; gap:0.5rem;
 background: rgba(0,212,255,0.08);
@@ -98,7 +90,6 @@ margin-bottom: 1.5rem;
 animation: fadeDown 0.8s ease both;
 position:relative;
 }
-
 .pulse-dot {
 width:8px; height:8px; border-radius:50%;
 background: var(–neon-green);
@@ -109,7 +100,6 @@ animation: pulseDot 1.5s infinite;
 0%,100%{ transform:scale(1); opacity:1; }
 50%{ transform:scale(1.6); opacity:0.5; }
 }
-
 .hero-title {
 font-family: ‘Baloo 2’, cursive;
 font-size: clamp(2.4rem, 9vw, 4.5rem);
@@ -119,7 +109,6 @@ margin-bottom: 1.2rem;
 position:relative;
 animation: fadeDown 0.8s 0.15s ease both;
 }
-
 .hero-title .line1 { color: var(–text); display:block; }
 .hero-title .line2 {
 display:block;
@@ -135,7 +124,20 @@ background: linear-gradient(90deg, var(–neon-green), var(–neon-yellow));
 -webkit-text-fill-color: transparent;
 background-clip: text;
 }
-
+.hero-name-glow {
+font-family: ‘Baloo 2’, cursive;
+font-size: clamp(3.5rem, 14vw, 7rem);
+font-weight: 900;
+display: block;
+background: linear-gradient(135deg, var(–neon-pink), var(–neon-purple), var(–neon-blue));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+filter: drop-shadow(0 0 30px rgba(255,61,154,0.4));
+animation: fadeDown 0.8s 0.05s ease both;
+letter-spacing: -0.02em;
+margin-bottom: 0.3rem;
+}
 .hero-sub {
 font-size: 1.05rem;
 color: var(–muted);
@@ -145,7 +147,6 @@ position:relative;
 margin-bottom: 2rem;
 }
 .hero-sub strong { color: var(–neon-green); font-weight: 700; }
-
 .hero-heart {
 font-size: 3.5rem;
 animation: heartbeat 1.4s infinite ease-in-out;
@@ -156,18 +157,6 @@ display:block; margin-bottom:1.2rem; position:relative;
 30%{ transform:scale(1.18); }
 60%{ transform:scale(1.06); }
 }
-
-.scroll-cue {
-position:absolute; bottom:1.5rem; left:50%; transform:translateX(-50%);
-display:flex; flex-direction:column; align-items:center; gap:0.4rem;
-font-size:0.75rem; color:var(–dim); animation: bobDown 2s infinite;
-position:relative;
-}
-@keyframes bobDown {
-0%,100%{ transform:translateY(0); }
-50%{ transform:translateY(7px); }
-}
-
 @keyframes fadeDown {
 from { opacity:0; transform:translateY(-20px); }
 to   { opacity:1; transform:translateY(0); }
@@ -179,7 +168,6 @@ max-width: 680px;
 margin: 0 auto;
 padding: 3rem 1.2rem;
 }
-
 .chapter-tag {
 display:inline-flex; align-items:center; gap:0.5rem;
 font-family:‘Baloo 2’, cursive;
@@ -206,7 +194,6 @@ line-height: 1.15;
 margin-bottom: 1.2rem;
 color: var(–text);
 }
-
 .accent-blue   { color: var(–neon-blue); }
 .accent-pink   { color: var(–neon-pink); }
 .accent-green  { color: var(–neon-green); }
@@ -247,7 +234,6 @@ border-radius:4px;
 .callout-pink::before   { background:var(–neon-pink); }
 .callout-purple { background:rgba(199,125,255,0.07); border:1px solid rgba(199,125,255,0.18); }
 .callout-purple::before { background:var(–neon-purple); }
-
 .callout .emoji { font-size:1.4rem; margin-right:0.4rem; vertical-align:-0.1em; }
 
 /* ─── NERVE DEMO ─── */
@@ -372,7 +358,6 @@ height:100%; border-radius:5px;
 animation: growBar 1.5s cubic-bezier(0.4,0,0.2,1) both;
 }
 @keyframes growBar { from{width:0} }
-
 .prog-note { font-size:0.78rem; color:var(–dim); margin-top:0.35rem; }
 
 /* ─── BCELL DEMO ─── */
@@ -405,7 +390,6 @@ position:absolute; top:-8px; right:-8px;
 0%,100%{ transform:translateY(0) rotate(-3deg); }
 50%{ transform:translateY(-9px) rotate(3deg); }
 }
-
 .ritu-center {
 position:absolute; top:50%; left:50%;
 transform:translate(-50%,-50%);
@@ -476,35 +460,118 @@ padding-top:0.1rem;
 }
 .rm-text { font-size:0.9rem; color:#8a9fc0; line-height:1.6; }
 
-/* ─── LETTER ─── */
-.letter-wrap {
-background: linear-gradient(135deg, rgba(0,212,255,0.05), rgba(199,125,255,0.06));
-border:1px solid rgba(199,125,255,0.2);
-border-radius:1.2rem;
-padding:2rem 1.6rem;
+/* ─── MOM LETTER ─── */
+.mom-wrap {
+position:relative;
 margin:1.5rem 0;
+overflow:hidden;
+}
+.mom-wrap::before {
+content:’’;
+position:absolute; inset:0;
+border-radius:1.4rem;
+padding:2px;
+background: linear-gradient(135deg,
+var(–neon-pink), var(–neon-purple), var(–neon-blue), var(–neon-pink));
+background-size: 300% 300%;
+animation: borderFlow 4s linear infinite;
+-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+-webkit-mask-composite: xor;
+mask-composite: exclude;
+pointer-events:none;
+}
+@keyframes borderFlow {
+0%  { background-position:0% 50%; }
+50% { background-position:100% 50%; }
+100%{ background-position:0% 50%; }
+}
+.mom-inner {
+background: linear-gradient(160deg, #0d0a1a, #120818, #0a0d1e);
+border-radius:1.4rem;
+padding:2.2rem 1.7rem;
 position:relative;
 overflow:hidden;
 }
-.letter-wrap::before {
-content:’”’;
-font-family:‘Baloo 2’,cursive;
-font-size:9rem; line-height:1;
-color:rgba(199,125,255,0.08);
-position:absolute; top:-1.5rem; left:0.8rem;
-pointer-events:none;
+.mom-inner::after {
+content:’’;
+position:absolute; inset:0; pointer-events:none;
+background: radial-gradient(ellipse 80% 60% at 50% 0%,
+rgba(255,61,154,0.06) 0%, transparent 60%);
 }
-.letter-body {
-font-size:0.98rem; color:#b0c0e0;
-line-height:2; font-style:italic;
+.mom-heart-bg {
+position:absolute; inset:0; pointer-events:none; overflow:hidden;
+}
+.mh {
+position:absolute; font-size:1.2rem; opacity:0.07;
+animation: floatHeart 6s ease-in-out infinite;
+}
+@keyframes floatHeart {
+0%,100%{ transform:translateY(0) scale(1); }
+50%    { transform:translateY(-18px) scale(1.1); }
+}
+.mom-tag {
+display:inline-flex; align-items:center; gap:0.5rem;
+background: rgba(255,61,154,0.12);
+border:1px solid rgba(255,61,154,0.3);
+border-radius:50px;
+padding:0.35rem 1rem;
+font-size:0.75rem; font-weight:800;
+color:var(–neon-pink);
+letter-spacing:0.1em; text-transform:uppercase;
+margin-bottom:1.6rem;
 position:relative;
 }
-.letter-sign {
-font-family:‘Baloo 2’,cursive;
-font-size:1.2rem; color:var(–neon-purple);
-font-weight:700; margin-top:1.2rem;
-font-style:normal;
+.mom-line {
+position:relative;
+margin-bottom:1.4rem;
+padding-left:1.2rem;
 }
+.mom-line::before {
+content:’’;
+position:absolute; left:0; top:0.2em; bottom:0.2em;
+width:3px; border-radius:2px;
+}
+.ml-pink::before   { background:var(–neon-pink);   box-shadow:0 0 8px var(–neon-pink); }
+.ml-purple::before { background:var(–neon-purple); box-shadow:0 0 8px var(–neon-purple); }
+.ml-blue::before   { background:var(–neon-blue);   box-shadow:0 0 8px var(–neon-blue); }
+.ml-green::before  { background:var(–neon-green);  box-shadow:0 0 8px var(–neon-green); }
+.ml-yellow::before { background:var(–neon-yellow); box-shadow:0 0 8px var(–neon-yellow); }
+.mom-line p {
+font-size:1.02rem; line-height:1.85; color:#ccd6f0;
+}
+.mom-line p em {
+font-style:normal;
+font-weight:800;
+}
+.mom-punch {
+font-family:‘Baloo 2’, cursive;
+font-size:clamp(1.25rem, 4.5vw, 1.7rem);
+font-weight:900;
+line-height:1.2;
+margin:1.8rem 0;
+text-align:center;
+position:relative;
+}
+.mom-sign {
+display:flex; align-items:center; gap:0.8rem;
+margin-top:2rem; padding-top:1.4rem;
+border-top:1px solid rgba(255,61,154,0.15);
+position:relative;
+}
+.mom-sign-avatar {
+width:44px; height:44px; border-radius:50%;
+background: linear-gradient(135deg, var(–neon-pink), var(–neon-purple));
+display:flex; align-items:center; justify-content:center;
+font-size:1.4rem; flex-shrink:0;
+box-shadow:0 0 16px rgba(255,61,154,0.4);
+}
+.mom-sign-text {
+font-family:‘Baloo 2’,cursive;
+font-size:1rem; font-weight:800;
+color:var(–neon-pink);
+line-height:1.3;
+}
+.mom-sign-sub { font-size:0.78rem; color:var(–muted); font-weight:600; }
 
 /* ─── FINAL CTA ─── */
 .final {
@@ -544,7 +611,6 @@ background: linear-gradient(90deg,transparent,rgba(0,212,255,0.15),transparent);
 .fi { opacity:0; transform:translateY(28px); transition:opacity 0.65s ease,transform 0.65s ease; }
 .fi.on { opacity:1; transform:none; }
 
-/* ─── MOBILE TWEAKS ─── */
 @media(max-width:400px) {
 .compare-grid { grid-template-columns:1fr; }
 .rm-time { min-width:70px; }
@@ -564,8 +630,10 @@ background: linear-gradient(90deg,transparent,rgba(0,212,255,0.15),transparent);
 
   <div class="hero-badge">
     <span class="pulse-dot"></span>
-    Your Recovery · In Progress
+    Heer's Recovery · In Progress
   </div>
+
+<span class="hero-name-glow">Heer.</span>
 
   <h1 class="hero-title">
     <span class="line1">Hey brave girl.</span>
@@ -574,11 +642,11 @@ background: linear-gradient(90deg,transparent,rgba(0,212,255,0.15),transparent);
   </h1>
 
   <p class="hero-sub">
-    This is your story. Your body.<br>
-    Your battle. And you are <strong>already winning.</strong>
+    This is <strong style="color:var(--neon-pink)">Heer's</strong> story. Her body.<br>
+    Her battle. And she is <strong>already winning.</strong>
   </p>
 
-  <div class="scroll-cue" style="position:relative;bottom:auto;">
+  <div style="position:relative;bottom:auto; display:flex; flex-direction:column; align-items:center; gap:0.4rem; font-size:0.75rem; color:var(--dim); animation: bobDown 2s infinite;">
     <span>Scroll to explore</span>
     <span style="font-size:1.2rem;">↓</span>
   </div>
@@ -590,22 +658,20 @@ background: linear-gradient(90deg,transparent,rgba(0,212,255,0.15),transparent);
 
 <section class="chapter fi" id="ch1">
   <div class="chapter-tag tag-blue">⚡ Chapter 1 · What Happened</div>
-  <h2 class="ch-title">Your immune system<br><span class="accent-pink">got confused.</span></h2>
+  <h2 class="ch-title">Heer's immune system<br><span class="accent-pink">got confused.</span></h2>
 
   <p class="body-text">
-    You have something called <strong style="color:var(--neon-blue)">Guillain-Barré Syndrome</strong> — GBS. Big name, but here's what it actually means:
+    Heer has something called <strong style="color:var(--neon-blue)">Guillain-Barré Syndrome</strong> — GBS. Big name, but here's what it actually means:
   </p>
 
   <div class="callout callout-blue">
     <span class="emoji">🦠</span>
-    A few weeks ago your body fought a small infection — maybe a cold, maybe something you barely noticed. Your immune system <em>won</em> that fight. But then it got confused. It didn't stop fighting. Instead it accidentally started attacking <strong style="color:var(--neon-blue)">your own nerve coating.</strong>
+    A few weeks ago Heer's body fought a small infection — maybe a cold, maybe something she barely noticed. Her immune system <em>won</em> that fight. But then it got confused. It didn't stop fighting. Instead it accidentally started attacking <strong style="color:var(--neon-blue)">her own nerve coating.</strong>
   </div>
 
   <p class="body-text">
-    Think of your nerves like electrical wires running from your brain to every part of your body. Wrapped around those wires is a coating called <strong style="color:var(--neon-yellow)">myelin</strong> — like plastic insulation on a cable. GBS stripped some of that coating away.
+    Think of Heer's nerves like electrical wires running from her brain to every part of her body. Wrapped around those wires is a coating called <strong style="color:var(--neon-yellow)">myelin</strong> — like plastic insulation on a cable. GBS stripped some of that coating away.
   </p>
-
-  <!-- HEALTHY NERVE -->
 
   <div class="nerve-wrap">
     <div class="nerve-label">🔬 Healthy nerve — signal travels fast & clear:</div>
@@ -643,7 +709,7 @@ background: linear-gradient(90deg,transparent,rgba(0,212,255,0.15),transparent);
 
   <div class="callout callout-green">
     <span class="emoji">💚</span>
-    <strong>The wires are still there.</strong> The myelin can grow back — and it <em>is already growing back</em> inside you right now.
+    <strong>The wires are still there.</strong> The myelin can grow back — and it <em>is already growing back</em> inside Heer right now.
   </div>
 </section>
 
@@ -652,16 +718,16 @@ background: linear-gradient(90deg,transparent,rgba(0,212,255,0.15),transparent);
 <!-- ═══════════════ CH 2 · YOUR VARIANT ═══════════════ -->
 
 <section class="chapter fi">
-  <div class="chapter-tag tag-purple">🧬 Chapter 2 · Your Specific Case</div>
-  <h2 class="ch-title">Your GBS had a<br><span class="accent-purple">special fingerprint.</span></h2>
+  <div class="chapter-tag tag-purple">🧬 Chapter 2 · Heer's Specific Case</div>
+  <h2 class="ch-title">Heer's GBS had a<br><span class="accent-purple">special fingerprint.</span></h2>
 
   <p class="body-text">
-    Most GBS attacks start from the legs upward. Yours hit your face, eyes, speech, and swallowing hardest. The doctors found specific <strong style="color:var(--neon-purple)">antibodies</strong> in your blood that explain exactly why.
+    Most GBS attacks start from the legs upward. Heer's hit her face, eyes, speech, and swallowing hardest. The doctors found specific <strong style="color:var(--neon-purple)">antibodies</strong> in her blood that explain exactly why.
   </p>
 
   <div class="callout callout-purple">
     <span class="emoji">🎯</span>
-    Normally antibodies are your secret weapons — tiny proteins that lock onto germs and destroy them. But some of yours were mistakenly made to lock onto <em>your own nerve parts</em> — especially the ones controlling your face, eyes, and throat. That's why those areas were hit hardest.
+    Normally antibodies are secret weapons — tiny proteins that lock onto germs and destroy them. But some of Heer's were mistakenly made to lock onto <em>her own nerve parts</em> — especially the ones controlling her face, eyes, and throat. That's why those areas were hit hardest.
   </div>
 
   <p class="body-text">
@@ -674,34 +740,32 @@ background: linear-gradient(90deg,transparent,rgba(0,212,255,0.15),transparent);
 <!-- ═══════════════ CH 3 · TREATMENTS SO FAR ═══════════════ -->
 
 <section class="chapter fi">
-  <div class="chapter-tag tag-orange">💪 Chapter 3 · What You've Already Survived</div>
-  <h2 class="ch-title">You already fought<br><span class="accent-orange">two massive battles.</span></h2>
+  <div class="chapter-tag tag-orange">💪 Chapter 3 · What Heer Has Already Survived</div>
+  <h2 class="ch-title">Heer already fought<br><span class="accent-orange">two massive battles.</span></h2>
 
-  <p class="body-text">You've had <strong style="color:var(--neon-orange)">11 treatment sessions</strong> — 6 plasma exchanges + 5 IVIG. That is enormous. Here's what each one actually did:</p>
+  <p class="body-text">Heer has had <strong style="color:var(--neon-orange)">11 treatment sessions</strong> — 6 plasma exchanges + 5 IVIG. That is enormous. Here's what each one actually did:</p>
 
   <div class="tx-card">
     <div class="tx-card-top" style="background:linear-gradient(90deg,var(--neon-blue),var(--neon-purple));"></div>
     <span class="tx-icon">🩸</span>
     <div class="tx-name" style="color:var(--neon-blue)">Plasma Exchange — 6 Sessions</div>
-    <div class="tx-desc">They took your blood out, filtered it through a machine that removed the harmful antibodies, and put clean blood back in. Like draining a contaminated pool and refilling with fresh water — <strong style="color:var(--text)">6 times.</strong></div>
+    <div class="tx-desc">They took Heer's blood out, filtered it through a machine that removed the harmful antibodies, and put clean blood back in. Like draining a contaminated pool and refilling with fresh water — <strong style="color:var(--text)">6 times.</strong></div>
   </div>
 
   <div class="tx-card">
     <div class="tx-card-top" style="background:linear-gradient(90deg,var(--neon-yellow),var(--neon-orange));"></div>
     <span class="tx-icon">💉</span>
     <div class="tx-name" style="color:var(--neon-yellow)">IVIG — 5 Sessions</div>
-    <div class="tx-desc">Thousands of healthy donors gave their antibodies. Those were given to you to overwhelm and outnumber your bad antibodies. Like sending in <strong style="color:var(--text)">a hundred thousand friendly soldiers</strong> to swamp the confused ones.</div>
+    <div class="tx-desc">Thousands of healthy donors gave their antibodies. Those were given to Heer to overwhelm and outnumber the bad antibodies. Like sending in <strong style="color:var(--text)">a hundred thousand friendly soldiers</strong> to swamp the confused ones.</div>
   </div>
 
   <div class="callout callout-pink" style="margin-top:1rem;">
     <span class="emoji">⚠️</span>
-    Both treatments cleaned the mess and slowed the attack — but they couldn't turn off the <strong style="color:var(--neon-pink)">factory</strong> still making bad antibodies inside you. That's what the next treatment does.
+    Both treatments cleaned the mess and slowed the attack — but they couldn't turn off the <strong style="color:var(--neon-pink)">factory</strong> still making bad antibodies inside Heer. That's what the next treatment does.
   </div>
 
-  <!-- PROGRESS -->
-
   <div class="prog-section">
-    <div class="prog-title">📈 Your Recovery Right Now — Day 13 After IVIG</div>
+    <div class="prog-title">📈 Heer's Recovery Right Now — Day 13 After IVIG</div>
 
 ```
 <div class="prog-item">
@@ -723,7 +787,7 @@ background: linear-gradient(90deg,transparent,rgba(0,212,255,0.15),transparent);
   <div class="prog-bar">
     <div class="prog-fill" style="width:50%; background:linear-gradient(90deg,var(--neon-green),var(--neon-blue));"></div>
   </div>
-  <div class="prog-note">Nerves to hands are regrowing their myelin coating.</div>
+  <div class="prog-note">Nerves to Heer's hands are regrowing their myelin coating.</div>
 </div>
 
 <div class="prog-item">
@@ -750,7 +814,7 @@ background: linear-gradient(90deg,transparent,rgba(0,212,255,0.15),transparent);
 
 <div class="callout callout-green" style="margin-top:1rem; margin-bottom:0;">
   <span class="emoji">🌱</span>
-  Every one of these improvements = myelin regrowing around your nerves. It grows at <strong>1 mm per day</strong>. You are literally rebuilding yourself.
+  Every one of these improvements = myelin regrowing around Heer's nerves. It grows at <strong>1 mm per day</strong>. Heer is literally rebuilding herself.
 </div>
 ```
 
@@ -766,13 +830,11 @@ background: linear-gradient(90deg,transparent,rgba(0,212,255,0.15),transparent);
   <h2 class="ch-title">Rituximab —<br><span class="accent-green">shutting down the factory.</span></h2>
 
   <p class="body-text">
-    Plasma exchange and IVIG cleaned the mess. But cells called <strong style="color:var(--neon-pink)">B-cells</strong> inside you were still making those harmful antibodies. Rituximab's job: <strong style="color:var(--neon-green)">find those B-cells and switch them off permanently.</strong>
+    Plasma exchange and IVIG cleaned the mess. But cells called <strong style="color:var(--neon-pink)">B-cells</strong> inside Heer were still making those harmful antibodies. Rituximab's job: <strong style="color:var(--neon-green)">find those B-cells and switch them off permanently.</strong>
   </p>
 
-  <!-- BCELL DEMO -->
-
   <div class="bcell-demo">
-    <div style="font-size:0.85rem; color:var(--muted); margin-bottom:0.4rem; font-weight:600;">Inside your body — before Rituximab</div>
+    <div style="font-size:0.85rem; color:var(--muted); margin-bottom:0.4rem; font-weight:600;">Inside Heer's body — before Rituximab</div>
     <div style="font-size:0.78rem; color:var(--dim); margin-bottom:0.6rem;">Pink = B-cells (bad antibody factories) · Green = Rituximab (shutdown agent)</div>
     <div class="bcell-stage">
       <div class="ritu-center">🛡️</div>
@@ -806,27 +868,27 @@ background: linear-gradient(90deg,transparent,rgba(0,212,255,0.15),transparent);
     <div class="tl-item">
       <div class="tl-dot" style="background:var(--neon-blue);"></div>
       <div class="tl-date" style="color:var(--neon-blue);">Infusion Day</div>
-      <div class="tl-body">Pre-meds first (antihistamine + mild steroid). Then Rituximab drips slowly for 4–6 hours through your IV. Not painful — just long. Fully monitored.</div>
+      <div class="tl-body">Pre-meds first (antihistamine + mild steroid). Then Rituximab drips slowly for 4–6 hours through IV. Not painful — just long. Fully monitored.</div>
     </div>
     <div class="tl-item">
       <div class="tl-dot" style="background:var(--neon-purple);"></div>
       <div class="tl-date" style="color:var(--neon-purple);">Days 1–14</div>
-      <div class="tl-body">Rituximab circulates, finding and marking B-cells. You may not feel different yet. The medicine is quietly doing its work.</div>
+      <div class="tl-body">Rituximab circulates, finding and marking B-cells. No need to feel different yet. The medicine is quietly doing its work inside Heer.</div>
     </div>
     <div class="tl-item">
       <div class="tl-dot" style="background:var(--neon-pink);"></div>
       <div class="tl-date" style="color:var(--neon-pink);">Week 2–4</div>
-      <div class="tl-body">B-cells get cleared. Bad antibody levels fall. The attack on your nerves weakens further. Recovery gets a cleaner, unblocked path.</div>
+      <div class="tl-body">B-cells get cleared. Bad antibody levels fall. The attack on Heer's nerves weakens further. Recovery gets a cleaner, unblocked path.</div>
     </div>
     <div class="tl-item">
       <div class="tl-dot" style="background:var(--neon-yellow);"></div>
       <div class="tl-date" style="color:var(--neon-yellow);">Month 1–3</div>
-      <div class="tl-body">With the attack stopped, your nerves focus entirely on repair. Expect more consistent improvements in speech, swallowing, and facial movement.</div>
+      <div class="tl-body">With the attack stopped, Heer's nerves focus entirely on repair. More consistent improvements in speech, swallowing, and facial movement.</div>
     </div>
     <div class="tl-item">
       <div class="tl-dot" style="background:var(--neon-green);"></div>
       <div class="tl-date" style="color:var(--neon-green);">Month 3–12</div>
-      <div class="tl-body">Full effect. New B-cells return — clean, fresh, without the old mistake. Best recovery window for most patients.</div>
+      <div class="tl-body">Full effect. New B-cells return — clean, fresh, without the old mistake. Best recovery window for Heer.</div>
     </div>
   </div>
 
@@ -841,45 +903,53 @@ background: linear-gradient(90deg,transparent,rgba(0,212,255,0.15),transparent);
 <!-- ═══════════════ CH 5 · NERVE REGROWTH ═══════════════ -->
 
 <section class="chapter fi">
-  <div class="chapter-tag tag-yellow">🌱 Chapter 5 · Your Body's Superpower</div>
+  <div class="chapter-tag tag-yellow">🌱 Chapter 5 · Heer's Body's Superpower</div>
   <h2 class="ch-title">Nerves <span class="accent-green">can and do grow back.</span></h2>
 
   <p class="body-text">
-    You are 17. Your nervous system is young, plastic, and powerful. Myelin regrows. Nerve pathways rebuild. Your brain can even find <strong style="color:var(--neon-yellow)">new routes</strong> for signals when old ones are blocked.
+    Heer is 17. Her nervous system is young, plastic, and powerful. Myelin regrows. Nerve pathways rebuild. Her brain can even find <strong style="color:var(--neon-yellow)">new routes</strong> for signals when old ones are blocked.
   </p>
 
   <div class="callout callout-yellow">
     <span class="emoji">🌲</span>
-    Think of it like a forest path that got overgrown. For a while no one can walk through. But gradually someone clears a little… then more… then more. Your nerves are clearing that path <strong>every single day.</strong> The lip movement you have now? That's the first footsteps on that path.
+    Think of it like a forest path that got overgrown. For a while no one can walk through. But gradually someone clears a little… then more… then more. Heer's nerves are clearing that path <strong>every single day.</strong> The lip movement she has now? That's the first footsteps on that path.
   </div>
 
   <p class="body-text">
-    In GBS recovery, the face and throat nerves come back <em>last</em> — because they're the most fine and precise. That your face isn't expressive yet is <strong style="color:var(--neon-green)">expected, not a bad sign.</strong> Your face is not forgotten. It's just doing the most detailed work.
+    In GBS recovery, the face and throat nerves come back <em>last</em> — because they're the most fine and precise. That Heer's face isn't expressive yet is <strong style="color:var(--neon-green)">expected, not a bad sign.</strong> Her face is not forgotten. It's just doing the most detailed work.
   </p>
 
   <div class="roadmap">
-    <div style="font-family:'Baloo 2',cursive; font-weight:800; color:var(--neon-blue); margin-bottom:1rem; font-size:1rem;">📅 Your Recovery Roadmap</div>
+    <div style="font-family:'Baloo 2',cursive; font-weight:800; color:var(--neon-blue); margin-bottom:0.6rem; font-size:1rem;">📅 Heer's Healing Journey</div>
 
 ```
+<!-- Updated roadmap message -->
+<div style="background: rgba(0,255,157,0.06); border: 1px solid rgba(0,255,157,0.2); border-radius: 0.8rem; padding: 1rem 1.2rem; margin-bottom: 1.2rem;">
+  <p style="font-family:'Baloo 2',cursive; font-size:1.05rem; font-weight:800; color:var(--neon-green); margin-bottom:0.4rem;">Why hurry healing? 🌸</p>
+  <p style="font-size:0.9rem; color:#8ad8b0; line-height:1.75;">
+    Let Heer's body take its time and do its magic. There is no race. Every single day, quietly and beautifully, her nerves are rebuilding. She will be <strong style="color:var(--neon-green)">100% Heer</strong> — the same Heer, but an even stronger, better version. Her body knows exactly what to do. Trust the process. 💚
+  </p>
+</div>
+
 <div class="roadmap-row">
   <div class="rm-time" style="color:var(--neon-green);">Now · Day 13</div>
   <div class="rm-text">Lip moving, hands improving, vision clearing — <strong style="color:var(--text)">already happening ✅</strong></div>
 </div>
 <div class="roadmap-row">
   <div class="rm-time" style="color:var(--neon-yellow);">Month 1–2</div>
-  <div class="rm-text">More hand/arm strength, possible early swallowing return</div>
+  <div class="rm-text">Heer's body quietly works its magic — more strength, more sensation</div>
 </div>
 <div class="roadmap-row">
   <div class="rm-time" style="color:var(--neon-blue);">Month 2–4</div>
-  <div class="rm-text">Speech sounds beginning to form, early facial movement returning</div>
+  <div class="rm-text">Speech and early facial movement finding their way back, beautifully and steadily</div>
 </div>
 <div class="roadmap-row">
   <div class="rm-time" style="color:var(--neon-purple);">Month 4–9</div>
-  <div class="rm-text">Speech clarity improving, facial expressions returning, Rituximab at full effect</div>
+  <div class="rm-text">Heer's smile, voice, and expressions returning — Rituximab at full effect</div>
 </div>
 <div class="roadmap-row">
-  <div class="rm-time" style="color:var(--neon-green);">Year 1–2</div>
-  <div class="rm-text">Most GBS patients at 17 return to near-complete function</div>
+  <div class="rm-time" style="color:var(--neon-pink);">Year 1–2</div>
+  <div class="rm-text">100% Heer — same soul, same laugh, <strong style="color:var(--neon-green)">better and stronger version ✨</strong></div>
 </div>
 ```
 
@@ -888,25 +958,73 @@ background: linear-gradient(90deg,transparent,rgba(0,212,255,0.15),transparent);
 
 <div class="div-line"></div>
 
-<!-- ═══════════════ CH 6 · LETTER ═══════════════ -->
+<!-- ═══════════════ CH 6 · MOM'S LETTER ═══════════════ -->
 
 <section class="chapter fi">
-  <div class="chapter-tag tag-pink">💌 Chapter 6 · Just For You</div>
-  <h2 class="ch-title">A note from someone who has seen<br><span class="accent-purple">thousands of recoveries.</span></h2>
+  <div class="chapter-tag tag-pink">💌 Chapter 6 · From Mom, With All My Heart</div>
+  <h2 class="ch-title">A note written with<br><span class="accent-pink">a mother's love.</span></h2>
 
-  <div class="letter-wrap">
-    <p class="letter-body">
-      In over 40 years of neurology, I have sat beside many patients who could not speak, could not swallow, could not smile. I have watched them recover. I have watched them go back to school, back to laughing with friends, back to full lives.
-      <br><br>
-      Your body is not broken. Your body is fighting. Everything it is doing — even the things that feel like loss — is part of a battle it started <em>to protect you.</em>
-      <br><br>
-      The lip moving, the hands working better, the vision clearing — on Day 13 — tells me your nervous system is responsive. That is everything.
-      <br><br>
-      Rituximab is not a sign that things are going worse. It is a sign that your doctors understand your case deeply enough to give your nerves <em>the best possible environment to heal fully.</em> It removes the last obstacle.
-      <br><br>
-      You do not need to be strong every moment. But you are allowed to believe — based on real biology, real medicine, and real experience — that <strong style="color:var(--neon-purple)">you will come back.</strong> Not a different you. <em>You.</em> With your voice. Your face. Your laugh. Your entire future.
-    </p>
-    <div class="letter-sign">— With great respect and confidence in you 💙</div>
+  <div class="mom-wrap">
+    <div class="mom-inner">
+      <div class="mom-heart-bg">
+        <span class="mh" style="left:5%;  top:10%; animation-delay:0s;">💗</span>
+        <span class="mh" style="left:80%; top:15%; animation-delay:1.2s;">💗</span>
+        <span class="mh" style="left:60%; top:70%; animation-delay:0.6s;">💗</span>
+        <span class="mh" style="left:20%; top:75%; animation-delay:1.8s;">💗</span>
+        <span class="mh" style="left:90%; top:55%; animation-delay:2.4s;">💗</span>
+      </div>
+
+```
+  <div class="mom-tag">
+    💗 &nbsp;For My Heer
+  </div>
+
+  <div class="mom-line ml-pink">
+    <p>My dearest <em style="color:var(--neon-pink);">Heer</em> — my brave, beautiful, extraordinary girl.</p>
+  </div>
+
+  <div class="mom-line ml-purple">
+    <p>I have watched you face something no 17-year-old should ever have to face — and I have seen you do it with a quiet strength that takes my breath away. Every single day.</p>
+  </div>
+
+  <div class="mom-punch">
+    <span style="background:linear-gradient(135deg,var(--neon-pink),var(--neon-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+      You are my warrior. 🌸
+    </span>
+  </div>
+
+  <div class="mom-line ml-blue">
+    <p>You didn't ask for this fight. But you are in it — and every breath you take, every tiny movement, every blink, every small sign of progress — I see it, Heer. I see <em style="color:var(--neon-blue);">all of it.</em> And it fills me with so much pride.</p>
+  </div>
+
+  <div class="mom-line ml-green">
+    <p>I want you to know — deep in your heart — that you <em style="color:var(--neon-green);">will win this.</em> Not because I'm your mum and I have to say it. But because I know you. I know what you are made of. And your body? Your body is made of the same fierce, fighting spirit.</p>
+  </div>
+
+  <div class="mom-line ml-yellow">
+    <p>Your voice will come back. Your smile will come back. Your laugh — that laugh that lights up every room — <em style="color:var(--neon-yellow);">it is coming back.</em> All of it. 100% you. The same Heer — just even more unstoppable than before.</p>
+  </div>
+
+  <div class="mom-punch">
+    <span style="background:linear-gradient(135deg,var(--neon-yellow),var(--neon-green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+      I am right here. Always. 💛
+    </span>
+  </div>
+
+  <div class="mom-line ml-pink">
+    <p>Rest when you need to rest. Cry when you need to cry. But never, ever doubt — not for one single moment — that you are loved beyond all words. And that this is <em style="color:var(--neon-pink);">not your end.</em> It is your comeback story.</p>
+  </div>
+
+  <div class="mom-sign">
+    <div class="mom-sign-avatar">🤱</div>
+    <div>
+      <div class="mom-sign-text">— Your Mom 💗</div>
+      <div class="mom-sign-sub">Your biggest fan. Your forever warrior. Always in your corner.</div>
+    </div>
+  </div>
+</div>
+```
+
   </div>
 </section>
 
@@ -915,30 +1033,35 @@ background: linear-gradient(90deg,transparent,rgba(0,212,255,0.15),transparent);
 <section class="final fi">
   <div class="final-glow"></div>
   <div class="final-title">
-    You didn't choose this fight.<br>
-    But you are fighting it<br>
+    Heer didn't choose this fight.<br>
+    But she is fighting it<br>
     with every breath. 💙
   </div>
   <p class="final-sub">
-    Your brain is sending signals. Your nerves are rebuilding. Your body remembers who you are. We are all here — watching you come back.
+    Her brain is sending signals. Her nerves are rebuilding. Her body remembers who she is. Everyone who loves her is watching her come back.
   </p>
   <div class="final-kicker">The comeback is always stronger than the setback. 🌱</div>
 
   <div style="margin-top:3rem; padding:1.4rem; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:1rem; max-width:500px; margin-left:auto; margin-right:auto;">
     <p style="font-size:0.78rem; color:var(--dim); line-height:1.8;">
-      <strong style="color:var(--muted);">📋 For Parents & Medical Team:</strong> This guide was prepared to explain GBS, Rituximab rationale, and recovery expectations for a 17-year-old with severe bulbar-predominant GBS with positive antibodies, Day 13 post-IVIG. All clinical decisions should remain with the attending neurologist.
+      <strong style="color:var(--muted);">📋 For Parents & Medical Team:</strong> This guide was prepared to explain GBS, Rituximab rationale, and recovery expectations for a 17-year-old (Heer) with severe bulbar-predominant GBS with positive antibodies, Day 13 post-IVIG. All clinical decisions should remain with the attending neurologist.
     </p>
   </div>
 </section>
 
+<style>
+@keyframes bobDown {
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(7px); }
+}
+</style>
+
 <script>
-  // Fade-in on scroll
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('on'); });
   }, { threshold: 0.08 });
   document.querySelectorAll('.fi').forEach(el => obs.observe(el));
 
-  // Progress bars animate when visible
   const barObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if(e.isIntersecting) {
