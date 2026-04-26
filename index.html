@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Healing Story — For You, Fighter</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Caveat:wght@400;600;700&display=swap');
+
+:root {
+–bg: #0d1117;
+–card: #161b22;
+–accent1: #58a6ff;
+–accent2: #f78166;
+–accent3: #56d364;
+–accent4: #e3b341;
+–purple: #bc8cff;
+–text: #e6edf3;
+–muted: #8b949e;
+–nerve: #58a6ff;
+–myelin: #e3b341;
+–bcell: #f78166;
+–ritual: #56d364;
+}
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+background: var(–bg);
+color: var(–text);
+font-family: ‘Nunito’, sans-serif;
+overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: 2rem;
+position: relative;
+overflow: hidden;
+}
+
+.hero-bg {
+position: absolute; inset: 0;
+background: radial-gradient(ellipse at 30% 50%, rgba(88,166,255,0.08) 0%, transparent 60%),
+radial-gradient(ellipse at 70% 50%, rgba(188,140,255,0.08) 0%, transparent 60%);
+}
+
+.stars {
+position: absolute; inset: 0;
+overflow: hidden;
+}
+
+.star {
+position: absolute;
+width: 2px; height: 2px;
+background: white;
+border-radius: 50%;
+animation: twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+0% { opacity: 0.1; transform: scale(1); }
+100% { opacity: 0.8; transform: scale(1.5); }
+}
+
+.hero-title {
+font-family: ‘Caveat’, cursive;
+font-size: clamp(2.5rem, 7vw, 5rem);
+font-weight: 700;
+background: linear-gradient(135deg, var(–accent1), var(–purple), var(–accent2));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+line-height: 1.2;
+margin-bottom: 1rem;
+animation: fadeUp 1s ease both;
+position: relative;
+}
+
+.hero-subtitle {
+font-size: clamp(1rem, 3vw, 1.4rem);
+color: var(–muted);
+max-width: 600px;
+line-height: 1.7;
+animation: fadeUp 1s 0.3s ease both;
+position: relative;
+}
+
+.hero-heart {
+font-size: 3rem;
+animation: heartbeat 1.5s infinite ease-in-out;
+display: block;
+margin-bottom: 1.5rem;
+position: relative;
+}
+
+@keyframes heartbeat {
+0%, 100% { transform: scale(1); }
+50% { transform: scale(1.15); }
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(30px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+.scroll-hint {
+position: absolute; bottom: 2rem;
+font-size: 0.85rem; color: var(–muted);
+animation: bounce 2s infinite;
+display: flex; flex-direction: column; align-items: center; gap: 0.3rem;
+}
+
+@keyframes bounce {
+0%, 100% { transform: translateY(0); }
+50% { transform: translateY(8px); }
+}
+
+/* SECTIONS */
+.section {
+max-width: 900px;
+margin: 0 auto;
+padding: 4rem 1.5rem;
+}
+
+.chapter-tag {
+font-family: ‘Caveat’, cursive;
+font-size: 1rem;
+color: var(–accent4);
+text-transform: uppercase;
+letter-spacing: 0.2em;
+margin-bottom: 0.8rem;
+display: block;
+}
+
+.section-title {
+font-size: clamp(1.8rem, 4vw, 2.8rem);
+font-weight: 800;
+line-height: 1.2;
+margin-bottom: 1.5rem;
+}
+
+.highlight { color: var(–accent1); }
+.highlight-warm { color: var(–accent2); }
+.highlight-green { color: var(–accent3); }
+.highlight-yellow { color: var(–accent4); }
+.highlight-purple { color: var(–purple); }
+
+.body-text {
+font-size: 1.1rem;
+line-height: 1.9;
+color: #c9d1d9;
+margin-bottom: 1.5rem;
+}
+
+/* NERVE ANIMATION */
+.nerve-demo {
+background: var(–card);
+border-radius: 1.5rem;
+padding: 2.5rem;
+margin: 2rem 0;
+border: 1px solid rgba(88,166,255,0.15);
+position: relative;
+overflow: hidden;
+}
+
+.nerve-label {
+font-family: ‘Caveat’, cursive;
+font-size: 1.2rem;
+color: var(–muted);
+margin-bottom: 1.5rem;
+}
+
+.nerve-container {
+display: flex;
+align-items: center;
+gap: 0;
+margin: 1.5rem 0;
+position: relative;
+}
+
+.nerve-core {
+flex: 1;
+height: 8px;
+background: var(–accent1);
+border-radius: 4px;
+position: relative;
+box-shadow: 0 0 12px rgba(88,166,255,0.5);
+}
+
+.myelin-segment {
+position: absolute;
+top: -8px;
+height: 24px;
+background: var(–myelin);
+border-radius: 12px;
+opacity: 0.85;
+}
+
+.signal-dot {
+width: 14px; height: 14px;
+background: white;
+border-radius: 50%;
+position: absolute;
+top: -3px;
+box-shadow: 0 0 8px white;
+animation: signal-travel 2.5s infinite linear;
+}
+
+@keyframes signal-travel {
+0% { left: 0%; opacity: 1; }
+100% { left: 100%; opacity: 0.3; }
+}
+
+.nerve-labels {
+display: flex;
+justify-content: space-between;
+font-size: 0.85rem;
+color: var(–muted);
+margin-top: 0.8rem;
+}
+
+/* TIMELINE */
+.timeline {
+position: relative;
+padding-left: 2rem;
+margin: 2rem 0;
+}
+
+.timeline::before {
+content: ‘’;
+position: absolute;
+left: 0.6rem; top: 0; bottom: 0;
+width: 2px;
+background: linear-gradient(to bottom, var(–accent2), var(–accent1), var(–accent3));
+}
+
+.timeline-item {
+position: relative;
+margin-bottom: 2.5rem;
+padding-left: 1.5rem;
+animation: fadeUp 0.6s ease both;
+}
+
+.timeline-dot {
+position: absolute;
+left: -1.85rem;
+top: 0.2rem;
+width: 14px; height: 14px;
+border-radius: 50%;
+border: 2px solid var(–bg);
+box-shadow: 0 0 8px currentColor;
+}
+
+.timeline-date {
+font-family: ‘Caveat’, cursive;
+font-size: 1rem;
+font-weight: 600;
+margin-bottom: 0.3rem;
+}
+
+.timeline-content {
+font-size: 1.05rem;
+line-height: 1.7;
+color: #c9d1d9;
+}
+
+/* TREATMENT CARDS */
+.treatment-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 1.5rem;
+margin: 2rem 0;
+}
+
+.treatment-card {
+background: var(–card);
+border-radius: 1.2rem;
+padding: 2rem;
+border: 1px solid rgba(255,255,255,0.07);
+position: relative;
+overflow: hidden;
+transition: transform 0.3s ease, border-color 0.3s;
+}
+
+.treatment-card:hover {
+transform: translateY(-4px);
+border-color: rgba(88,166,255,0.3);
+}
+
+.treatment-card::before {
+content: ‘’;
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 3px;
+}
+
+.card-plasma::before { background: linear-gradient(90deg, #58a6ff, #bc8cff); }
+.card-ivig::before { background: linear-gradient(90deg, #e3b341, #f78166); }
+.card-ritual::before { background: linear-gradient(90deg, #56d364, #58a6ff); }
+
+.card-icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
+.card-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.8rem; }
+.card-desc { font-size: 0.95rem; color: #8b949e; line-height: 1.7; }
+
+/* B-CELL ANIMATION */
+.bcell-demo {
+background: var(–card);
+border-radius: 1.5rem;
+padding: 2.5rem;
+margin: 2rem 0;
+border: 1px solid rgba(247,129,102,0.2);
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+
+.bcell-arena {
+height: 160px;
+position: relative;
+margin: 1.5rem 0;
+}
+
+.bcell {
+position: absolute;
+width: 40px; height: 40px;
+border-radius: 50%;
+background: radial-gradient(circle at 35% 35%, rgba(247,129,102,0.9), rgba(247,129,102,0.4));
+border: 2px solid var(–bcell);
+display: flex; align-items: center; justify-content: center;
+font-size: 0.6rem;
+color: white;
+font-weight: 700;
+animation: floatcell 4s infinite ease-in-out;
+box-shadow: 0 0 10px rgba(247,129,102,0.4);
+}
+
+.bcell::after {
+content: ‘💣’;
+font-size: 0.8rem;
+position: absolute;
+top: -8px; right: -8px;
+}
+
+.bcell.killed {
+animation: dissolve 1s forwards;
+}
+
+@keyframes floatcell {
+0%, 100% { transform: translateY(0px) rotate(0deg); }
+50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes dissolve {
+0% { opacity: 1; transform: scale(1); }
+50% { transform: scale(1.3); background: rgba(88,166,255,0.6); }
+100% { opacity: 0; transform: scale(0); }
+}
+
+.rituximab-hero {
+width: 60px; height: 60px;
+background: radial-gradient(circle at 40% 40%, rgba(86,211,100,0.9), rgba(86,211,100,0.3));
+border-radius: 50%;
+border: 2px solid var(–ritual);
+position: absolute;
+top: 50%; left: 50%;
+transform: translate(-50%, -50%);
+display: flex; align-items: center; justify-content: center;
+font-size: 1.5rem;
+box-shadow: 0 0 20px rgba(86,211,100,0.5);
+animation: pulse-glow 2s infinite;
+z-index: 2;
+}
+
+@keyframes pulse-glow {
+0%, 100% { box-shadow: 0 0 20px rgba(86,211,100,0.3); }
+50% { box-shadow: 0 0 40px rgba(86,211,100,0.7); }
+}
+
+/* PROGRESS SECTION */
+.progress-section {
+background: var(–card);
+border-radius: 1.5rem;
+padding: 2.5rem;
+margin: 2rem 0;
+border: 1px solid rgba(86,211,100,0.2);
+}
+
+.progress-item {
+margin-bottom: 1.8rem;
+}
+
+.progress-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 0.6rem;
+}
+
+.progress-label {
+font-weight: 700;
+font-size: 0.95rem;
+}
+
+.progress-status {
+font-size: 0.8rem;
+padding: 0.2rem 0.8rem;
+border-radius: 20px;
+font-weight: 600;
+}
+
+.status-returning { background: rgba(86,211,100,0.15); color: var(–accent3); }
+.status-healing { background: rgba(88,166,255,0.15); color: var(–accent1); }
+.status-improving { background: rgba(227,179,65,0.15); color: var(–accent4); }
+
+.progress-bar {
+height: 8px;
+background: rgba(255,255,255,0.05);
+border-radius: 4px;
+overflow: hidden;
+}
+
+.progress-fill {
+height: 100%;
+border-radius: 4px;
+animation: fillBar 2s ease both;
+animation-delay: 0.5s;
+}
+
+@keyframes fillBar {
+from { width: 0; }
+}
+
+/* LETTER SECTION */
+.letter-section {
+background: linear-gradient(135deg, rgba(88,166,255,0.05), rgba(188,140,255,0.05));
+border: 1px solid rgba(188,140,255,0.2);
+border-radius: 1.5rem;
+padding: 3rem;
+margin: 2rem 0;
+position: relative;
+}
+
+.letter-section::before {
+content: ‘”’;
+font-family: ‘Caveat’, cursive;
+font-size: 8rem;
+color: rgba(188,140,255,0.15);
+position: absolute;
+top: -1rem; left: 1.5rem;
+line-height: 1;
+}
+
+.letter-text {
+font-size: 1.15rem;
+line-height: 2;
+color: #c9d1d9;
+font-style: italic;
+position: relative;
+}
+
+.letter-sign {
+font-family: ‘Caveat’, cursive;
+font-size: 1.4rem;
+color: var(–purple);
+margin-top: 1.5rem;
+font-weight: 600;
+}
+
+/* SIMPLE EXPLANATION BOXES */
+.simple-box {
+background: rgba(86,211,100,0.05);
+border-left: 4px solid var(–accent3);
+border-radius: 0 1rem 1rem 0;
+padding: 1.5rem 2rem;
+margin: 1.5rem 0;
+font-size: 1.05rem;
+line-height: 1.9;
+color: #c9d1d9;
+}
+
+.simple-box .emoji { font-size: 1.5rem; margin-right: 0.5rem; }
+
+/* ANALOGY CARD */
+.analogy-card {
+background: var(–card);
+border-radius: 1.2rem;
+padding: 2rem;
+margin: 1.5rem 0;
+border: 1px solid rgba(227,179,65,0.2);
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 2rem;
+align-items: center;
+}
+
+@media (max-width: 600px) {
+.analogy-card { grid-template-columns: 1fr; }
+}
+
+.analogy-side { font-size: 0.95rem; line-height: 1.7; color: #c9d1d9; }
+.analogy-title { font-weight: 800; font-size: 1rem; margin-bottom: 0.5rem; }
+.vs-badge {
+position: absolute;
+background: var(–accent4);
+color: #000;
+font-weight: 900;
+padding: 0.3rem 0.6rem;
+border-radius: 8px;
+font-size: 0.85rem;
+}
+
+/* FINAL CTA */
+.final-section {
+text-align: center;
+padding: 5rem 2rem;
+background: radial-gradient(ellipse at center, rgba(88,166,255,0.06) 0%, transparent 70%);
+position: relative;
+}
+
+.courage-text {
+font-family: ‘Caveat’, cursive;
+font-size: clamp(2rem, 5vw, 3.5rem);
+font-weight: 700;
+background: linear-gradient(135deg, var(–accent3), var(–accent1));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+line-height: 1.3;
+margin-bottom: 1.5rem;
+}
+
+/* NAV DOTS */
+.nav-dots {
+position: fixed;
+right: 1.5rem;
+top: 50%;
+transform: translateY(-50%);
+display: flex;
+flex-direction: column;
+gap: 0.8rem;
+z-index: 100;
+}
+
+.nav-dot {
+width: 8px; height: 8px;
+border-radius: 50%;
+background: rgba(255,255,255,0.2);
+cursor: pointer;
+transition: all 0.3s;
+}
+
+.nav-dot.active { background: var(–accent1); transform: scale(1.5); }
+
+/* DIVIDER */
+.divider {
+height: 1px;
+background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+margin: 1rem 0;
+}
+
+/* NOTEBOOK BADGE */
+.notebook-badge {
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+background: rgba(88,166,255,0.1);
+border: 1px solid rgba(88,166,255,0.3);
+border-radius: 20px;
+padding: 0.4rem 1rem;
+font-size: 0.85rem;
+color: var(–accent1);
+margin-bottom: 1.5rem;
+font-weight: 600;
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+.treatment-grid { grid-template-columns: 1fr; }
+.nav-dots { display: none; }
+.letter-section { padding: 2rem 1.5rem; }
+}
+
+/* FADE IN ON SCROLL */
+.fade-in {
+opacity: 0;
+transform: translateY(24px);
+transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible {
+opacity: 1;
+transform: translateY(0);
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAVIGATION DOTS -->
+
+<div class="nav-dots" id="navDots">
+  <div class="nav-dot active" onclick="scrollToSection(0)"></div>
+  <div class="nav-dot" onclick="scrollToSection(1)"></div>
+  <div class="nav-dot" onclick="scrollToSection(2)"></div>
+  <div class="nav-dot" onclick="scrollToSection(3)"></div>
+  <div class="nav-dot" onclick="scrollToSection(4)"></div>
+  <div class="nav-dot" onclick="scrollToSection(5)"></div>
+  <div class="nav-dot" onclick="scrollToSection(6)"></div>
+</div>
+
+<!-- ====================== SECTION 0: HERO ====================== -->
+
+<section class="hero" id="sec0">
+  <div class="hero-bg"></div>
+  <div class="stars" id="stars"></div>
+  <span class="hero-heart">💙</span>
+  <h1 class="hero-title">Hey brave girl.<br>Let me explain<br>what's happening.</h1>
+  <p class="hero-subtitle">This is your story. Your body. Your battle.<br>And you are <strong>already winning.</strong></p>
+  <div class="scroll-hint">
+    <span>Scroll to explore</span>
+    <span>↓</span>
+  </div>
+</section>
+
+<!-- ====================== SECTION 1: WHAT IS GBS ====================== -->
+
+<section id="sec1">
+  <div class="section fade-in">
+    <span class="chapter-tag">Chapter 1 · What Happened</span>
+    <h2 class="section-title">Your immune system got <span class="highlight-warm">confused.</span></h2>
+
+```
+<p class="body-text">
+  You have something called <strong>Guillain-Barré Syndrome</strong> — or GBS. It's a big name, but here's what it means in simple words:
+</p>
+
+<div class="simple-box">
+  <span class="emoji">🦠</span> A few weeks ago, your body fought a small infection — maybe a cold, maybe something you barely noticed. Your immune system (your body's army) WON that fight. But then... it got confused. It didn't stop fighting. Instead, it accidentally started attacking <strong>your own nerves.</strong>
+</div>
+
+<p class="body-text">Think of your nerves like electrical wires running from your brain to every part of your body. Wrapped around those wires is a protective coating called <strong>myelin</strong> — like the plastic covering on a wire. Your immune system started stripping that coating away.</p>
+
+<!-- NERVE ANIMATION -->
+<div class="nerve-demo">
+  <div class="nerve-label">🔬 Your nerve — what normally happens:</div>
+  <div class="nerve-container" id="healthyNerve">
+    <div class="nerve-core" style="width:100%; position:relative;">
+      <!-- myelin segments -->
+      <div class="myelin-segment" style="left:5%; width:14%;"></div>
+      <div class="myelin-segment" style="left:22%; width:14%;"></div>
+      <div class="myelin-segment" style="left:39%; width:14%;"></div>
+      <div class="myelin-segment" style="left:56%; width:14%;"></div>
+      <div class="myelin-segment" style="left:73%; width:14%;"></div>
+      <div class="signal-dot" style="animation-duration: 1.8s;"></div>
+    </div>
+  </div>
+  <div class="nerve-labels">
+    <span>🟡 Yellow = Myelin (protective coat)</span>
+    <span>⚪ White dot = Signal (message from brain)</span>
+    <span>🔵 Blue = Nerve fiber</span>
+  </div>
+
+  <div style="margin-top:2rem;">
+    <div class="nerve-label">⚠️ What GBS did — myelin damaged, signal gets confused:</div>
+    <div class="nerve-container">
+      <div class="nerve-core" style="width:100%; position:relative;">
+        <!-- damaged segments - fewer and broken -->
+        <div class="myelin-segment" style="left:5%; width:6%; opacity:0.3;"></div>
+        <div class="myelin-segment" style="left:39%; width:5%; opacity:0.25;"></div>
+        <div class="myelin-segment" style="left:73%; width:7%; opacity:0.2;"></div>
+        <div class="signal-dot" style="animation-duration: 5s; opacity:0.4; box-shadow: 0 0 4px rgba(255,255,255,0.3);"></div>
+      </div>
+    </div>
+    <p style="color:var(--accent2); font-size:0.9rem; margin-top:0.8rem;">Result: Signals from brain can't reach muscles properly → can't speak, swallow, move face, move hands clearly</p>
+  </div>
+</div>
+
+<p class="body-text">
+  This is why you lost your speech. Your swallowing. Your face movements. Your hand strength. It wasn't because something broke permanently — it was because the <strong>signal pathway got disrupted.</strong> The wires are still there. The coating can grow back. <span class="highlight-green">And it is already growing back.</span>
+</p>
+```
+
+  </div>
+</section>
+
+<!-- ====================== SECTION 2: YOUR GBS VARIANT ====================== -->
+
+<section id="sec2">
+  <div class="section fade-in">
+    <span class="chapter-tag">Chapter 2 · Your Specific Case</span>
+    <h2 class="section-title">Your GBS had a <span class="highlight-purple">special fingerprint.</span></h2>
+
+```
+<p class="body-text">
+  Most GBS attacks start from the legs and move upward. Yours was different — it attacked your face, eyes, swallowing, and speech most strongly. This pattern has a name: it's connected to specific <strong>antibodies</strong> that the doctors found in your blood.
+</p>
+
+<div class="simple-box" style="border-left-color: var(--purple); background: rgba(188,140,255,0.05);">
+  <span class="emoji">🧬</span> <strong>Antibodies</strong> are normally your body's secret weapons — tiny proteins that grab on to enemies and destroy them. But in your case, some antibodies were made that grab on to <em>your own nerve parts</em> — especially the nerves that control your face, eyes, and throat. That's why those areas were most affected.
+</div>
+
+<p class="body-text">
+  This is actually <strong>important information</strong> — because now the doctors know exactly what's causing the problem. They can target it precisely. It's like finding the exact lock, and now they have the exact key.
+</p>
+```
+
+  </div>
+</section>
+
+<!-- ====================== SECTION 3: TREATMENTS SO FAR ====================== -->
+
+<section id="sec3">
+  <div class="section fade-in">
+    <span class="chapter-tag">Chapter 3 · What You've Already Been Through</span>
+    <h2 class="section-title">You already fought <span class="highlight-warm">two battles.</span> And you're still here.</h2>
+
+```
+<div class="treatment-grid">
+  <div class="treatment-card card-plasma">
+    <span class="card-icon">🩸</span>
+    <div class="card-title" style="color: var(--accent1);">Plasma Exchange (6 sessions)</div>
+    <div class="card-desc">
+      Imagine draining your swimming pool and refilling it with clean water. Your blood was filtered to remove those harmful antibodies. Each session cleaned your blood. <strong>6 sessions = a LOT of cleaning.</strong>
+    </div>
+  </div>
+
+  <div class="treatment-card card-ivig">
+    <span class="card-icon">💉</span>
+    <div class="card-title" style="color: var(--accent4);">IVIG — 5 Sessions</div>
+    <div class="card-desc">
+      IVIG is like flooding your system with thousands of "good" antibodies donated by healthy people. They overwhelmed and distracted the bad antibodies. Think of it as sending in a massive friendly army to outnumber the confused one.
+    </div>
+  </div>
+</div>
+
+<p class="body-text">
+  Both these treatments were powerful. They stopped the attack. They slowed the damage. <strong>But they couldn't permanently silence the factory</strong> that was still making bad antibodies inside you. That's what the next treatment is for.
+</p>
+
+<!-- YOUR RECOVERY TIMELINE -->
+<div class="progress-section">
+  <h3 style="font-size:1.3rem; font-weight:800; margin-bottom:1.5rem; color: var(--accent3);">📈 Your Recovery — Right Now (Day 13 after IVIG)</h3>
+
+  <div class="progress-item">
+    <div class="progress-header">
+      <span class="progress-label">👁️ Vision</span>
+      <span class="progress-status status-returning">Clearing ✓</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" style="width:55%; background: linear-gradient(90deg, var(--accent1), var(--purple));"></div>
+    </div>
+    <div style="font-size:0.85rem; color:var(--muted); margin-top:0.4rem;">Single vision returning. Double vision improving.</div>
+  </div>
+
+  <div class="progress-item">
+    <div class="progress-header">
+      <span class="progress-label">✋ Hand Movement</span>
+      <span class="progress-status status-returning">Improved ✓</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" style="width:50%; background: linear-gradient(90deg, var(--accent3), var(--accent1));"></div>
+    </div>
+    <div style="font-size:0.85rem; color:var(--muted); margin-top:0.4rem;">Nerves to hands are remyelinating (regrowing coating).</div>
+  </div>
+
+  <div class="progress-item">
+    <div class="progress-header">
+      <span class="progress-label">👄 Lip Movement</span>
+      <span class="progress-status status-healing">Beginning ✓</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" style="width:25%; background: linear-gradient(90deg, var(--accent4), var(--accent2));"></div>
+    </div>
+    <div style="font-size:0.85rem; color:var(--muted); margin-top:0.4rem;">Lower lip movement is a very positive early sign for speech recovery.</div>
+  </div>
+
+  <div class="progress-item">
+    <div class="progress-header">
+      <span class="progress-label">😊 Facial Expression</span>
+      <span class="progress-status status-improving">Journey Started</span>
+    </div>
+    <div class="progress-bar">
+      <div class="progress-fill" style="width:15%; background: linear-gradient(90deg, var(--purple), var(--accent1));"></div>
+    </div>
+    <div style="font-size:0.85rem; color:var(--muted); margin-top:0.4rem;">Facial nerves take longer — but they WILL come back. Be patient with your face.</div>
+  </div>
+
+  <div style="margin-top:1rem; padding: 1rem 1.5rem; background: rgba(86,211,100,0.08); border-radius:0.8rem; border: 1px solid rgba(86,211,100,0.2);">
+    <p style="color:var(--accent3); font-size:0.95rem; font-weight:600;">
+      🌱 Every single one of these improvements = your nerves regrowing their protective coating. Myelin regrows at about 1mm per day. You are literally rebuilding yourself, millimeter by millimeter.
+    </p>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ====================== SECTION 4: RITUXIMAB ====================== -->
+
+<section id="sec4">
+  <div class="section fade-in">
+    <span class="chapter-tag">Chapter 4 · The New Treatment</span>
+    <h2 class="section-title">Rituximab — <span class="highlight-green">shutting down the factory.</span></h2>
+
+```
+<p class="body-text">
+  Here's the most important thing to understand. Plasma exchange and IVIG cleaned up the <em>mess</em>. But somewhere in your body, there are cells called <strong>B-cells</strong> that kept making more bad antibodies. Rituximab's job is to <strong>find those B-cells and switch them off.</strong>
+</p>
+
+<!-- B-CELL DEMO -->
+<div class="bcell-demo">
+  <h3 style="font-family:'Caveat',cursive; font-size:1.4rem; color:var(--accent2); margin-bottom:0.5rem;">Inside your body — the antibody factory</h3>
+  <p style="font-size:0.9rem; color:var(--muted); margin-bottom:1rem;">B-cells (red) = the factories making bad antibodies | Rituximab (green) = the shutdown agent</p>
+
+  <div class="bcell-arena" id="bcellArena">
+    <div class="rituximab-hero">🛡️</div>
+    <!-- B-cells placed around -->
+    <div class="bcell" style="left:5%; top:10%; animation-delay:0s;">B</div>
+    <div class="bcell" style="left:20%; top:60%; animation-delay:0.5s;">B</div>
+    <div class="bcell" style="left:70%; top:15%; animation-delay:1s;">B</div>
+    <div class="bcell" style="left:80%; top:65%; animation-delay:1.5s;">B</div>
+    <div class="bcell" style="left:45%; top:5%; animation-delay:2s;">B</div>
+    <div class="bcell" style="left:10%; top:75%; animation-delay:0.3s;">B</div>
+    <div class="bcell" style="left:65%; top:75%; animation-delay:0.8s;">B</div>
+  </div>
+
+  <div class="analogy-card" style="margin:0; border:none; background:transparent; padding:1rem 0 0;">
+    <div class="analogy-side">
+      <div class="analogy-title" style="color:var(--bcell);">🏭 Before Rituximab</div>
+      B-cells keep churning out bad antibodies. Like a factory on full blast with no off-switch. Plasma exchange and IVIG clean the output — but the factory keeps running.
+    </div>
+    <div class="analogy-side">
+      <div class="analogy-title" style="color:var(--ritual);">🔒 After Rituximab</div>
+      Rituximab latches onto B-cells and marks them for destruction. Your immune system then cleans them up. <strong>Factory shuts down for 6–12 months.</strong> New, healthy B-cells will slowly replace them — without the mistake.
+    </div>
+  </div>
+</div>
+
+<h3 style="font-size:1.4rem; font-weight:800; margin:2rem 0 1rem; color:var(--accent1);">How the treatment works — step by step:</h3>
+
+<div class="timeline">
+  <div class="timeline-item">
+    <div class="timeline-dot" style="background: var(--accent1); color:var(--accent1);"></div>
+    <div class="timeline-date" style="color:var(--accent1);">Day of Infusion</div>
+    <div class="timeline-content">You'll be given medicines first (antihistamine + mild steroid) to prevent any reaction. Then Rituximab is given through your IV — it's a slow drip over 4–6 hours. You'll be monitored the whole time. It's not painful, just long.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-dot" style="background: var(--accent4); color:var(--accent4);"></div>
+    <div class="timeline-date" style="color:var(--accent4);">Days 1–14</div>
+    <div class="timeline-content">Rituximab is circulating in your blood, finding B-cells. You may not feel different yet. This is the <strong>targeting phase</strong>. The medicine is quietly doing its work.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-dot" style="background: var(--accent2); color:var(--accent2);"></div>
+    <div class="timeline-date" style="color:var(--accent2);">Week 2–4</div>
+    <div class="timeline-content">B-cells start getting cleared. The bad antibody levels in your blood start to fall. The immune system attack on your nerves <strong>weakens further</strong>. Your recovery gains a cleaner path.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-dot" style="background: var(--accent3); color:var(--accent3);"></div>
+    <div class="timeline-date" style="color:var(--accent3);">Month 1–3</div>
+    <div class="timeline-content">With the attack stopped more completely, your nerves can focus entirely on <strong>repair and regrowth</strong>. This is when you should start seeing more consistent improvements in speech, swallowing, and face.</div>
+  </div>
+  <div class="timeline-item">
+    <div class="timeline-dot" style="background: var(--purple); color:var(--purple);"></div>
+    <div class="timeline-date" style="color:var(--purple);">Month 3–12</div>
+    <div class="timeline-content">Full effect. B-cells slowly come back — but they come back <strong>fresh</strong>, without the old mistake programmed into them. Most patients see their best recovery in this window.</div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ====================== SECTION 5: NERVE REGROWTH ====================== -->
+
+<section id="sec5">
+  <div class="section fade-in">
+    <span class="chapter-tag">Chapter 5 · Your Body's Superpower</span>
+    <h2 class="section-title">Nerves <span class="highlight-green">can and do grow back.</span></h2>
+
+```
+<p class="body-text">
+  Here is one of the most beautiful things about your situation: you are 17. Your nervous system is young, plastic, and powerful. Myelin regrows. Nerve pathways rebuild. The brain can even find <strong>new routes</strong> for signals when old ones are damaged.
+</p>
+
+<div class="simple-box" style="border-left-color: var(--accent4); background: rgba(227,179,65,0.05);">
+  <span class="emoji">🌱</span> <strong>Think of it like this:</strong> Imagine a forest path that got overgrown and blocked. For a while, no one can walk through. But gradually, someone clears a little... then more... then more. Eventually the path is open again. Your nerves are clearing the path, every single day. The lip movement you have now? That's the first footsteps on that path.
+</div>
+
+<p class="body-text">
+  The order of recovery in GBS usually goes: <strong>movement before sensation → distal (far) before proximal (close) → hands before face → face takes the longest</strong>. Your face not showing emotion yet is normal and expected — not permanent.
+</p>
+
+<div style="background:var(--card); border-radius:1.2rem; padding:2rem; margin:1.5rem 0; border:1px solid rgba(88,166,255,0.15);">
+  <h3 style="font-size:1.1rem; font-weight:800; margin-bottom:1rem; color:var(--accent1);">📅 Realistic Recovery Roadmap for You:</h3>
+  <div style="display:grid; gap:0.8rem;">
+    <div style="display:flex; gap:1rem; align-items:center;">
+      <span style="min-width:100px; color:var(--accent3); font-weight:700; font-size:0.9rem;">Now (Day 13)</span>
+      <span style="font-size:0.9rem; color:#c9d1d9;">Lip movement, hand improvement, vision clearing — already happening ✅</span>
+    </div>
+    <div style="display:flex; gap:1rem; align-items:center;">
+      <span style="min-width:100px; color:var(--accent4); font-weight:700; font-size:0.9rem;">Month 1–2</span>
+      <span style="font-size:0.9rem; color:#c9d1d9;">Likely more hand/arm strength, possible early swallowing return</span>
+    </div>
+    <div style="display:flex; gap:1rem; align-items:center;">
+      <span style="min-width:100px; color:var(--accent1); font-weight:700; font-size:0.9rem;">Month 2–4</span>
+      <span style="font-size:0.9rem; color:#c9d1d9;">Speech sounds beginning to form, facial movement returning</span>
+    </div>
+    <div style="display:flex; gap:1rem; align-items:center;">
+      <span style="min-width:100px; color:var(--purple); font-weight:700; font-size:0.9rem;">Month 4–9</span>
+      <span style="font-size:0.9rem; color:#c9d1d9;">Speech clarity improving, facial expressions returning, Rituximab fully active</span>
+    </div>
+    <div style="display:flex; gap:1rem; align-items:center;">
+      <span style="min-width:100px; color:var(--accent3); font-weight:700; font-size:0.9rem;">Year 1–2</span>
+      <span style="font-size:0.9rem; color:#c9d1d9;">Most GBS patients at 17 return to near-complete function with proper treatment</span>
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ====================== SECTION 6: LETTER TO HER ====================== -->
+
+<section id="sec6">
+  <div class="section fade-in">
+    <span class="chapter-tag">Chapter 6 · Just For You</span>
+    <h2 class="section-title">A note from someone who has seen <span class="highlight-purple">thousands of recoveries.</span></h2>
+
+```
+<div class="letter-section">
+  <p class="letter-text">
+    In over 40 years of neurology, I have sat beside many patients who could not speak, could not swallow, could not smile. I have watched them recover. I have watched them go back to school, back to laughing with friends, back to full lives.
+    <br><br>
+    Your body is not broken. Your body is fighting. Everything it is doing — even the things that feel like loss — is part of a battle it started to protect you.
+    <br><br>
+    The fact that your lip is moving, that your hands are working better, that your eyes are seeing more clearly — on Day 13 — tells me your nervous system is responsive. That is everything.
+    <br><br>
+    The new treatment, Rituximab, is not a sign that things are getting worse. It is a sign that your doctors understand your case deeply enough to give your nerves the <em>best possible environment</em> to heal fully. It removes the last obstacle.
+    <br><br>
+    You do not need to be strong every moment. But you are allowed to believe — based on real biology, real medicine, and real experience — that <strong>you will come back.</strong> Not a different you. <em>You.</em> With your voice. Your face. Your laugh. Your entire future.
+  </p>
+  <div class="letter-sign">— With great respect and confidence in you, Dr. [Your neurologist standing beside you]</div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ====================== FINAL ====================== -->
+
+<section class="final-section" id="sec7">
+  <div class="courage-text">
+    You didn't choose this fight.<br>
+    But you are fighting it<br>
+    with every breath you take. 💙
+  </div>
+  <p style="color:var(--muted); max-width:500px; margin:0 auto 2rem; font-size:1rem; line-height:1.8;">
+    Your brain is sending signals. Your nerves are rebuilding. Your body remembers who you are. And we are all here — watching you come back.
+  </p>
+  <div style="font-family:'Caveat',cursive; font-size:1.5rem; color:var(--accent3); font-weight:600;">
+    The comeback is always stronger than the setback. 🌱
+  </div>
+
+  <div style="margin-top:4rem; padding:2rem; background:rgba(255,255,255,0.03); border-radius:1rem; max-width:600px; margin-left:auto; margin-right:auto; border:1px solid rgba(255,255,255,0.07);">
+    <p style="font-size:0.85rem; color:var(--muted); line-height:1.8;">
+      <strong style="color:#c9d1d9;">📋 For Parents & Medical Team:</strong> This document was prepared to explain GBS, treatment rationale for Rituximab, and recovery expectations in accessible terms for a 17-year-old patient with severe bulbar-predominant GBS with positive antibodies, Day 13 post-IVIG completion. Clinical decisions should always involve direct consultation with the attending neurologist.
+    </p>
+  </div>
+</section>
+
+<script>
+  // Generate stars
+  const starsContainer = document.getElementById('stars');
+  for (let i = 0; i < 80; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    star.style.animationDelay = Math.random() * 3 + 's';
+    star.style.animationDuration = (2 + Math.random() * 3) + 's';
+    star.style.width = star.style.height = (1 + Math.random() * 2) + 'px';
+    starsContainer.appendChild(star);
+  }
+
+  // Scroll fade-in observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Nav dots
+  const sections = ['sec0','sec1','sec2','sec3','sec4','sec5','sec6'];
+  const dots = document.querySelectorAll('.nav-dot');
+
+  function scrollToSection(i) {
+    document.getElementById(sections[i]).scrollIntoView({ behavior:'smooth' });
+  }
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const idx = sections.indexOf(entry.target.id);
+        if (idx >= 0) {
+          dots.forEach(d => d.classList.remove('active'));
+          if (dots[idx]) dots[idx].classList.add('active');
+        }
+      }
+    });
+  }, { threshold: 0.5 });
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) sectionObserver.observe(el);
+  });
+</script>
+
+</body>
+</html>
